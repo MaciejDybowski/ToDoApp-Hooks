@@ -9,20 +9,19 @@ const Task = forwardRef(({ data, deleteTask, updateTask }, ref) => {
         if (!data.checked) {
             return (
                 <div ref={ref} className='task'>
-                    <Checkbox checked={data.checked} onClick={() => updateTask(data.id)} />
-                    <p>{data.id}</p>
-                    <p>{data.value}</p>
-                    <p>{time.getHours()} : {time.getMinutes()} : {time.getSeconds()}</p>
-                    <CloseIcon onClick={() => deleteTask(data.value)} />
+                    <Checkbox className='checkbox' checked={data.checked} onClick={() => updateTask(data.id)} />
+                    <p className='text'>{data.value}</p>
+                    <p className='time'>{time.getHours()} : {time.getMinutes()} : {time.getSeconds()}</p>
+                    <CloseIcon className='close-icon' onClick={() => deleteTask(data.value)} />
                 </div>
             )
         } else {
             return (
                 <div ref={ref} className='task'>
-                    <Checkbox checked={data.checked} onClick={() => updateTask(data.id)} />
-                    <p className='done'>{data.value}</p>
-                    <p className='done'>{time.getHours()} : {time.getMinutes()} : {time.getSeconds()}</p>
-                    <CloseIcon onClick={() => deleteTask(data.value)} />
+                    <Checkbox className='checkbox' checked={data.checked} onClick={() => updateTask(data.id)} />
+                    <p className='text done'>{data.value}</p>
+                    <p className='time done'>{time.getHours()} : {time.getMinutes()} : {time.getSeconds()}</p>
+                    <CloseIcon className='close-icon' onClick={() => deleteTask(data.value)} />
                 </div>
             )
         }

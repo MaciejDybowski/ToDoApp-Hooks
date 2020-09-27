@@ -4,13 +4,26 @@
     display: flex;
     flex-direction: row;
     align-items: center;
-
-    justify-content: space-around;
     background: chartreuse;
     margin-top : 20px;
     margin-bottom: 20px;
 }
+.checkbox{
+    margin-left: 20px;
+    margin-right: 90px;
+}
 
+.text{
+    margin-left: 30px;
+    margin-right: auto;
+}
+.time{
+    margin-right: 30px;
+}
+.close-icon{
+    cursor: pointer;
+    margin-right: 30px;
+}
 .done{
     text-decoration: line-through;
 }
