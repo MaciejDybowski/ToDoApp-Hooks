@@ -11,12 +11,21 @@ function ToDoApp() {
     setTasks(tasks.filter(item => item.value !== value));
   }
 
+  const updateTask = (id) => {
+    console.log(id);
+    let index = tasks.findIndex((task) => task.id === id);
+    console.log(index);
+    let newArray = [...tasks];
+    console.log(newArray);
+    newArray[index].checked = !newArray[index].checked;
+    setTasks(newArray);
+  }
+
   return (
     <div className="ToDoApp">
       <h2 className='title'>ToDo List App</h2>
       <AddTask addTask={setTasks} tasks={tasks} />
-      {/* <Tasks tasks = {tasks} /> */}
-      {tasks.map((task) => <Task data={task} deleteTask={deleteTask}/>)}
+      {tasks.map((task) => <Task key={task.id} data={task} deleteTask={deleteTask} updateTask = {updateTask}/>)}
     </div>
   );
 }

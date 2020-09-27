@@ -3,6 +3,8 @@ import './AddTask.css'
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
 
+let idTask = 1;
+
 function AddTask({tasks, addTask}) {
     const [inputValue, setInputValue] = useState("");
 
@@ -12,13 +14,15 @@ function AddTask({tasks, addTask}) {
 
     const handleButton = () =>{
         let obj = {
-            done : false,
+            id : idTask,
+            checked : false,
             value: inputValue,
             date : new Date(),
         }
-
-        addTask([obj,...tasks])
+        
+        addTask([...tasks,obj])
         setInputValue("");
+        idTask++;
     }
 
     return (

@@ -4,16 +4,28 @@ import { Checkbox } from '@material-ui/core';
 import CloseIcon from '@material-ui/icons/Close';
 
 
-function Task({ data , deleteTask}) {
+function Task({ data , deleteTask, updateTask}) {
     const time = data.date;
-    return (
-        <div className='task'>
-            <Checkbox/>
-            <p>{data.value}</p>
-            <p>{time.getHours()} : {time.getMinutes()} : {time.getSeconds()}</p>
-            <CloseIcon  onClick={() => deleteTask(data.value)}/>
-        </div>
-    )
+    if(!data.checked){
+        return (
+            <div className='task'>
+                <Checkbox checked={data.checked} onClick={() => updateTask(data.id)}/>
+                <p>{data.id}</p>
+                <p>{data.value}</p>
+                <p>{time.getHours()} : {time.getMinutes()} : {time.getSeconds()}</p>
+                <CloseIcon  onClick={() => deleteTask(data.value)}/>
+            </div>
+        )
+    }else{
+        return (
+            <div className='task'>
+                <Checkbox checked={data.checked} onClick={() => updateTask(data.id)}/>
+                <p className='done'>{data.value}</p>
+                <p className='done'>{time.getHours()} : {time.getMinutes()} : {time.getSeconds()}</p>
+                <CloseIcon  onClick={() => deleteTask(data.value)}/>
+            </div>
+        )
+    }
 }
 
 export default Task

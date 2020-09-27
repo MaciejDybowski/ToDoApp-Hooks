@@ -3,10 +3,10 @@ import Task from '../Task';
 import './Tasks.css';
 
 
-function Tasks({tasks}) {
+function Tasks({tasks,deleteTask,updateTask}) {
     return (
         <div className = 'tasks'>
-            {tasks.map((task,i) => <Task key={i} data={task}/>)}
+            {tasks.map((task) => <Task key={task.id} data={task} deleteTask={deleteTask} updateTask = {updateTask}/>)}
         </div>
     )
 }
