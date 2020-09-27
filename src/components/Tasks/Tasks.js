@@ -1,11 +1,12 @@
 import React from 'react'
+import Task from '../Task';
 import './Tasks.css';
 
 
-function Tasks() {
+function Tasks({tasks}) {
     return (
         <div className = 'tasks'>
-            <p>Tasks will be here</p>
+            {tasks.map((task,i) => <Task key={i} data={task}/>)}
         </div>
     )
 }
