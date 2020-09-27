@@ -14,10 +14,10 @@ function AddTask({tasks, addTask}) {
         let obj = {
             done : false,
             value: inputValue,
-            date : Date(),
+            date : new Date(),
         }
 
-        addTask([...tasks,obj])
+        addTask([obj,...tasks])
         setInputValue("");
     }
 
