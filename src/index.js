@@ -5,9 +5,9 @@ import ToDoApp from './ToDoApp';
 import * as serviceWorker from './serviceWorker';
 
 ReactDOM.render(
-  <React.StrictMode>
-    <ToDoApp />
-  </React.StrictMode>,
+
+  <ToDoApp />
+  ,
   document.getElementById('root')
 );
 

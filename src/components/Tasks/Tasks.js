@@ -5,6 +5,7 @@ import FlipMove from 'react-flip-move'
 
 
 function Tasks({ tasks, deleteTask, updateTask }) {
+  
     return (
         <div className='tasks'>
             <FlipMove>

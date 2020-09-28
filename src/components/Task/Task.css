@@ -4,18 +4,26 @@
     display: flex;
     flex-direction: row;
     align-items: center;
-    background: chartreuse;
+    border-radius: 30px;
+    background: #FFBA08;
     margin-top : 20px;
     margin-bottom: 20px;
 }
-.checkbox{
-    margin-left: 20px;
-    margin-right: 90px;
+
+
+.MuiIconButton-colorSecondary {
+    color: #1C3144!important;
 }
 
+.MuiCheckbox-root{
+    margin-left: 20px!important;
+    color: #1C3144!important;
+}
 .text{
     margin-left: 30px;
     margin-right: auto;
+    font-family: 'Epilogue';
+    font-weight: 400;
 }
 .time{
     margin-right: 30px;
@@ -24,6 +32,21 @@
     cursor: pointer;
     margin-right: 30px;
 }
+
+.close-icon:hover{
+    animation: animowany_tekst 1s ease-out;
+}
 .done{
     text-decoration: line-through;
+    opacity: 0.7;
 }
+
+
+@keyframes animowany_tekst
+      {
+        0% {transform:rotate(0);}
+        25% {transform:rotate(90);}
+        50% {transform:rotate(180);}
+        75% {transform:rotate(270);}
+        100% {transform:rotate(360deg);}
+      }

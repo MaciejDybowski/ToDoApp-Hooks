@@ -17,3 +17,13 @@ code {
   margin:0;
   padding: 0;
 }
+
+@font-face {
+  font-family: 'Lobster-Regular';
+  src: local('Lobster-Regular'), url(./fonts/Lobster-Regular.ttf) format('truetype');
+}
+
+@font-face {
+  font-family: 'Epilogue';
+  src: local('Epilogue-Regular'), url(./fonts/Epilogue-Medium.ttf) format('truetype');
+}

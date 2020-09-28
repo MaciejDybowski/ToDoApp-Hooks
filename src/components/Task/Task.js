@@ -11,8 +11,8 @@ const Task = forwardRef(({ data, deleteTask, updateTask }, ref) => {
                 <div ref={ref} className='task'>
                     <Checkbox className='checkbox' checked={data.checked} onClick={() => updateTask(data.id)} />
                     <p className='text'>{data.value}</p>
-                    <p className='time'>{time.getHours()} : {time.getMinutes()} : {time.getSeconds()}</p>
-                    <CloseIcon className='close-icon' onClick={() => deleteTask(data.value)} />
+                    <p className='time'>{time.getDate()}.{time.getMonth()+1}.{time.getFullYear()}, {time.getHours()}:{time.getMinutes()}:{time.getSeconds()}</p>
+                    <CloseIcon className='close-icon' onClick={() => deleteTask(data.id)} />
                 </div>
             )
         } else {
@@ -20,12 +20,11 @@ const Task = forwardRef(({ data, deleteTask, updateTask }, ref) => {
                 <div ref={ref} className='task'>
                     <Checkbox className='checkbox' checked={data.checked} onClick={() => updateTask(data.id)} />
                     <p className='text done'>{data.value}</p>
-                    <p className='time done'>{time.getHours()} : {time.getMinutes()} : {time.getSeconds()}</p>
-                    <CloseIcon className='close-icon' onClick={() => deleteTask(data.value)} />
+                    <p className='time done'>{time.getDate()}.{time.getMonth()+1}.{time.getFullYear()}, {time.getHours()}:{time.getMinutes()}:{time.getSeconds()}</p>
+                    <CloseIcon className='close-icon' onClick={() => deleteTask(data.id)} />
                 </div>
             )
         }
     }
 )
-
 export default Task
