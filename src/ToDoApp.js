@@ -5,8 +5,20 @@ import Tasks from './components/Tasks';
 import Aos from 'aos'
 import 'aos/dist/aos.css'
 
+const sampleTable = [
+  {id: 1, checked: false, value: "Zrobić śniadanie", date: new Date()},
+  {id: 2, checked: false, value: "Dodać funkcje", date: new Date()},
+  {id: 3, checked: false, value: "Kupić etui", date: new Date()},
+  {id: 4, checked: false, value: "Wyprowadzić psa", date: new Date()},
+  {id: 5, checked: false, value: "Zarobić zakupy", date: new Date()},
+  {id: 6, checked: false, value: "Przygotować prezent", date: new Date()},
+  {id: 7, checked: false, value: "Urodziny Kasi", date: new Date()},
+]
+
 function ToDoApp() {
-  const [tasks, setTasks] = useState([]);
+  const [tasks, setTasks] = useState(sampleTable);
+
+  console.log(tasks);
 
   useEffect(() => {
     Aos.init({ duration: 2000 })
