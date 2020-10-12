@@ -4,7 +4,7 @@ import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
 
 
-let idTask = 1;
+let idTask = 8;
 
 function AddTask({ tasks, addTask }) {
     const [inputValue, setInputValue] = useState("");
